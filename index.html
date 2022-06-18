@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="estilos.css">
+    <title>Tarefas Diárias</title>
+</head>
+<body>
+    <h2>Tarefas</h2>
+    <div id="app">
+        <table>
+            <tr>
+                <td></td>
+                <td> Id </td>
+                <td> Descrição </td>
+                <td> Foi feito? </td>
+            </tr>
+            <tr v-for="t of tasks">
+                <td>
+                    <img v-if=" t.situation == 'true' "
+                        src="https://img.icons8.com/emoji/48/000000/ok-button-emoji.png" />
+                    <img v-else-if=" t.situation == 'false' "
+                        src="https://img.icons8.com/emoji/48/000000/game-die.png" />
+                    <img v-else src="https://img.icons8.com/emoji/48/000000/warning-emoji.png" />
+                </td>
+                <td> {{t.id}} </td>
+                <td> {{t.description}} </td>
+                <td> {{t.situation}} </td>
+            </tr>
+        </table>
+    </div>
+    <script src="Vue.js"></script>
+</body>
+</html>
